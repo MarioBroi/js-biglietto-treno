@@ -24,3 +24,17 @@ console.log(ticketPrice); //prezzo biglietto
 let ticketMinor = ((ticketPrice / 100) * minorsDiscount);
 let ticketOver65 = ((ticketPrice / 100) * over65Discount);
 console.log(ticketMinor, ticketOver65); //sconto da applicare al prezzzo base
+
+//- Verifico se il cliente é over 65 o minorenne per applicare i vari sconti
+if (age < 18) {
+    console.log(Math.round(ticketPrice - ticketMinor)); //prezzo finale per minore
+    document.getElementById("ticket-price").innerHTML = `${(ticketPrice - ticketMinor).toFixed(2)} €`;
+
+} else if (age >= 65) {
+    console.log(ticketPrice - ticketOver65); //prezzo finale per over 65
+    document.getElementById("ticket-price").innerHTML = `${(ticketPrice - ticketOver65).toFixed(2)} €`;
+
+} else {
+    console.log(ticketPrice); // prezzo finale intero
+    document.getElementById("ticket-price").innerHTML = `${ticketPrice} €`;
+}
