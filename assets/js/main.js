@@ -28,13 +28,16 @@ console.log(ticketMinor, ticketOver65); //sconto da applicare al prezzzo base
 //- Verifico se il cliente é over 65 o minorenne per applicare i vari sconti
 if (age < 18) {
     console.log(Math.round(ticketPrice - ticketMinor)); //prezzo finale per minore
+    //- Stampo il prezzo finale del biglietto con massimo 2 decimali sui centesimi
     document.getElementById("ticket-price").innerHTML = `${(ticketPrice - ticketMinor).toFixed(2)} €`;
 
 } else if (age >= 65) {
     console.log(ticketPrice - ticketOver65); //prezzo finale per over 65
+    //- Stampo il prezzo finale del biglietto con massimo 2 decimali sui centesimi
     document.getElementById("ticket-price").innerHTML = `${(ticketPrice - ticketOver65).toFixed(2)} €`;
 
 } else {
     console.log(ticketPrice); // prezzo finale intero
+    //- Stampo il prezzo finale del biglietto con massimo 2 decimali sui centesimi
     document.getElementById("ticket-price").innerHTML = `${ticketPrice} €`;
 }
